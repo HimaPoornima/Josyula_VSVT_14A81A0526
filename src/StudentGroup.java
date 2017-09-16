@@ -37,43 +37,25 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void setStudents(Student[] students)
         {
-          for(int i=0;i<students.length;i++)
+         for(int i=0;i<students.length;i++)
 		{
-                      if(i<0 && i>=students.length)
-                     throw new  IllegalArgumentException("");
-                     
-                     else
 			this.students[i]=students[i];
-				
-		} 
+			
+			
+		}
 		// Add your implementation here
 	}
 
 	@Override
 	public Student getStudent(int index) 
         {
-	 int i=0;	
-           if(students==null)
-         {
-
-            throw new IllegalArgumentException("");
-          }
-
-           elseif((i==index)&&(index>=students.length))
-          {
-
-             throw new IllegalArgumentException("");
-          }
-            else
-           {
-              
-                for(i=0;i<students.length;i++)
+	 for(int i=0;i<students.length;i++)
 		{
-                     
-                   return students[i];	
-			
+			if(i==index)
+			{
+				return students[i];
+			}
 		}
-           }
 
 
            // Add your implementation here
@@ -85,16 +67,11 @@ public class StudentGroup implements StudentArrayOperation {
         {
 	   for(int i=0;i<students.length;i++)
 		{
-			if((i==index)&&(index>=students.length))
-                         {
-                           throw new IllegalArgumentException(" ");
-			   }
-                         else
-                              {
+			if(i==index)
+			{
 				students[i]=student;
-			       }
-			
-		}	
+			}
+		}
           // Add your implementation here
 	}
 
