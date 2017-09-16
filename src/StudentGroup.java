@@ -24,80 +24,59 @@ public class StudentGroup implements StudentArrayOperation {
 	}
 
 	@Override
-	public Student[] getStudents()
-        {
-           if(students==null)
+	public Student[] getStudents() {
 		// Add your implementation here
-		throw new IllegalArgumentException("");
-           else
-         
-            return students;
+			
+		return students;
 	}
 
 	@Override
-	public void setStudents(Student[] students)
-        {
-         for(int i=0;i<students.length;i++)
+	public void setStudents(Student[] students) {
+		// Add your implementation here
+		for(int i=0;i<students.length;i++)
 		{
 			this.students[i]=students[i];
 			
 			
 		}
-		// Add your implementation here
-	}
+		}
+	
 
 	@Override
-	public Student getStudent(int index) 
-        {
-	 for(int i=0;i<students.length;i++)
+	public Student getStudent(int index) {
+		// Add your implementation here
+		for(int i=0;i<students.length;i++)
 		{
 			if(i==index)
 			{
 				return students[i];
 			}
 		}
-
-
-           // Add your implementation here
-		
+		return null;
 	}
 
 	@Override
-	public void setStudent(Student student, int index)
-        {
-	   for(int i=0;i<students.length;i++)
+	public void setStudent(Student student, int index) {
+		// Add your implementation here
+		for(int i=0;i<students.length;i++)
 		{
 			if(i==index)
 			{
+				students[i]=null;
 				students[i]=student;
 			}
 		}
-          // Add your implementation here
 	}
 
 	@Override
-	public void addFirst(Student student) 
-      {
+	public void addFirst(Student student) {
+		// Add your implementation here
 		
-        if(students==null)
-         {
-
-            throw new IllegalArgumentException("");
-          }
-          else
-           {
-             for(int i=0;i<students.length;i++)
-              {
-               students[i]=student;
-              }  
-           }
-               
-
-          // Add your implementation here
 	}
 
 	@Override
 	public void addLast(Student student) {
+		students[students.length+1]=student;
 		// Add your implementation here
 	}
 
@@ -109,6 +88,11 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void remove(int index) {
 		// Add your implementation here
+		for(int i=0;i<students.length;i++)
+		{
+			if(i==index)
+				students[i]=null;
+		}
 	}
 
 	@Override
@@ -118,6 +102,10 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void removeFromIndex(int index) {
+		for(int i=index+1;i<students.length;i++)
+		{
+			remove(i);
+		}		
 		// Add your implementation here
 	}
 
@@ -128,6 +116,10 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void removeToIndex(int index) {
+		for(int i=0;i<index;i++)
+		{
+			remove(i);
+		}
 		// Add your implementation here
 	}
 
@@ -138,28 +130,26 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void bubbleSort() {
-
-           for(int i=0;i<students.length-1;i++)
+		// Add your implementation here
+		for(int i=0;i<students.length-1;i++)
 		{
 			for(int j=i+1;j<students.length;j++)
 			{
 				if(students[i].getId()==students[j].getId())
 				{
-					student t=students[i];
+					Student t=students[i];
 					students[i]=students[j];
 					students[j]=t;
 				}
 			}
 		}
-
-         
-		// Add your implementation here
-	}
+		}
+	
 
 	@Override
 	public Student[] getByBirthDate(Date date) {
-		
-                Student s1[]=null;
+		// Add your implementation here
+		Student s1[]=null;
 		boolean f=false;
 		for(int i=0;i<students.length;i++)
 		{
@@ -172,15 +162,13 @@ public class StudentGroup implements StudentArrayOperation {
 		if(f)
 		return s1;
 		else
-
-          // Add your implementation here
 		return null;
 	}
 
 	@Override
 	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate) {
-		// Add your implementation here
 		return null;
+	
 	}
 
 	@Override
@@ -191,19 +179,22 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public int getCurrentAgeByDate(int indexOfStudent) {
-		// Add your implementation here
+		
 		return 0;
 	}
 
 	@Override
 	public Student[] getStudentsByAge(int age) {
 		// Add your implementation here
+		
 		return null;
+		
 	}
 
 	@Override
 	public Student[] getStudentsWithMaxAvgMark() {
 		// Add your implementation here
+		
 		return null;
 	}
 
